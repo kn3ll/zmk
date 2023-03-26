@@ -1,0 +1,16 @@
+if SHIELD_WIRELESS_ERGODOX_DONGLE
+
+config ZMK_KEYBOARD_NAME
+    default "WirelessErgodox"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+endif
+
+if SHIELD_WIRELESS_ERGODOX_DONGLE || SHIELD_WIRELESS_ERGODOX_LEFT || SHIELD_WIRELESS_ERGODOX_RIGHT
+
+config ZMK_SPLIT
+    default y
+
+endif
