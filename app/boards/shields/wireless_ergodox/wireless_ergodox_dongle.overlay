@@ -4,4 +4,24 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include "ergodox.dtsi"
+#include "wireless_ergodox.dtsi"
+
+&default_transform {
+    col-offset = <0>;
+};
+
+/ {
+
+    kscan0: kscan_composite {
+        compatible = "zmk,kscan-composite";
+        label = "KSCAN0";
+        columns = <15>;
+        rows = <7>;
+
+        // Include the direct GPIO driver...
+        direct {
+            kscan = <&kscan2>;
+        };
+    };
+
+};

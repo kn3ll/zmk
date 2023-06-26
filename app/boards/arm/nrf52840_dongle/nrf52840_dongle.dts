@@ -80,17 +80,12 @@
 
 		sd_partition: partition@0 {
 			label = "softdevice";
-			reg = <0x00000000 0x00026000>;
+			reg = <0x00001000 0x00026000>;
 		};
-		code_partition: partition@26000 {
+		code_partition: partition@27000 {
 			label = "code_partition";
-			reg = <0x00026000 0x000c6000>;
+			reg = <0x00027000 0x000b1000>;
 		};
-
-		/*
-		 * The flash starting at 0x000ec000 and ending at
-		 * 0x000f3fff is reserved for use by the application.
-		 */
 
 		/*
 		 * Storage partition will be used by FCB/LittleFS/NVS
@@ -98,12 +93,12 @@
 		 */
 		storage_partition: partition@ec000 {
 			label = "storage";
-			reg = <0x000ec000 0x00008000>;
+			reg = <0x000d8000 0x00008000>;
 		};
 
 		boot_partition: partition@f4000 {
-			label = "adafruit_boot";
-			reg = <0x000f4000 0x0000c000>;
+			label = "nordic_boot";
+			reg = <0x000e0000 0x00020000>;
 		};
 	};
 };

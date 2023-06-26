@@ -13,4 +13,10 @@ if SHIELD_WIRELESS_ERGODOX_DONGLE || SHIELD_WIRELESS_ERGODOX_LEFT || SHIELD_WIRE
 config ZMK_SPLIT
     default y
 
+config BT
+    default y
+
+config USB_DEVICE_STACK
+    default y
+
 endif

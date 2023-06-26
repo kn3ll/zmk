@@ -1,20 +1,28 @@
-
 /*
  * Copyright (c) 2021 The ZMK Contributors
  *
  * SPDX-License-Identifier: MIT
  */
 
-#include "ergodox.dtsi"
+#include "wireless_ergodox.dtsi"
 
 &default_transform {
-    col-offset = <0>;
+    col-offset = <8>;
+};
+
+&kscan0 {
+    // add key matrix to kscan0
+    matrix {
+        kscan = <&kscan1>;
+        row-offset = <1>; // ...and shift it to not overlap
+    };
 };
 
 / {
-    kscan0: kscan {
+
+    kscan1: kscan1 {
         compatible = "zmk,kscan-gpio-matrix";
-        label = "KSCAN";
+        label = "KSCAN1";
         diode-direction = "col2row";
 
         col-gpios
@@ -35,4 +43,5 @@
             , <&gpio0  9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             , <&gpio0 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             ;
+    };
 };
